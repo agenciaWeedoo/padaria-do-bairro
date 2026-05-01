@@ -1,15 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <!-- Configuração de caracteres e responsividade (Atividade 1) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Padaria do Bairro - Pães Artesanais e Café Fresco</title>
+    <!-- Link para o arquivo CSS externo (Atividade 4) -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- CSS para as bordas da tabela (Atividade 4) -->
+    <style>
+        table {
+            border-collapse: collapse; /* Garante que as bordas sejam únicas e não duplas */
+            width: 100%;
+            max-width: 400px;
+        }
+        table, th, td {
+            border: 1px solid black; /* Borda sólida e preta */
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <header></header>
-    <main>
+
+    <!-- Cabeçalho principal do site -->
+    <header>
+        <!-- Nome da padaria em H1 (Atividade 2) -->
         <h1>Padaria do Bairro</h1>
+        <p>O sabor do pão quentinho toda manhã.</p>
+    </header>
+
+    <!-- Conteúdo principal do site -->
+    <main>
+        
+        <!-- Seção: Sobre Nós (Atividade 2) -->
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Fundada em 1995, a Padaria do Bairro nasceu do sonho de oferecer produtos artesanais feitos com fermentação natural e ingredientes locais. Nossa missão é trazer o aconchego do café da tarde para a sua mesa.</p>
+        </section>
+
+        <!-- Seção: Nossos Produtos (Atividade 2 e 3) -->
+        <section id="produtos">
+            <h2>Nossos Produtos</h2>
+            <p>Conheça nossa variedade de delícias produzidas diariamente por nossos mestres padeiros:</p>
+            <!-- Lista não-ordenada com 5 produtos (Atividade 3) -->
+            <ul>
+                <li>Pão Francês Tradicional</li>
+                <li>Pão de Queijo Mineiro</li>
+                <li>Croissant de Manteiga</li>
+                <li>Bolo de Cenoura com Chocolate</li>
+                <li>Bagunça de Frutas (Sazonal)</li>
+            </ul>
+        </section>
+
+        <!-- Seção: Diferenciais (Atividade 2 e 3) -->
+        <section id="diferenciais">
+            <h2>Nossos Diferenciais</h2>
+            <h3>Por que escolher a nossa padaria?</h3>
+            <!-- Lista de especialidades (Atividade 3) -->
+            <ul>
+                <li>Fermentação Natural (Levain)</li>
+                <li>Ingredientes 100% Orgânicos</li>
+                <li>Entrega Grátis no Bairro</li>
+            </ul>
+            <p>Garantimos a máxima qualidade em cada fornada, respeitando o tempo de maturação de cada massa para um sabor incomparável.</p>
+        </section>
+
+        <!-- Seção: Localização e Horários (Atividade 2 e 3) -->
+        <section id="contato">
+            <h2>Localização e Horários</h2>
+            <p>Estamos localizados na Rua das Flores, nº 123, bem no coração do bairro.</p>
+            
+            <h3>Horário de Funcionamento</h3>
+            <!-- Lista ordenada para os horários (Atividade 3) -->
+            <ol>
+                <li>Segunda a Sexta: 06:00 às 20:00</li>
+                <li>Sábados: 07:00 às 18:00</li>
+                <li>Domingos e Feriados: 07:00 às 13:00</li>
+            </ol>
+        </section>
+
     </main>
-    <footer></footer>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 Padaria do Bairro - Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
