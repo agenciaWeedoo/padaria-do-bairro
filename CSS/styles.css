@@ -16,10 +16,15 @@
 
 body {
     font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+<<<<<<< HEAD
     background-color: #F5EDD6;
     /* Parchment — fundo geral creme-pergaminho */
     color: #3E1F00;
     /* Marrom-café escuro para texto principal */
+=======
+    background-color: #F5EDD6; /* Parchment — fundo geral creme-pergaminho */
+    color: #3E1F00;            /* Marrom-café escuro para texto principal */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     line-height: 1.6;
 }
 
@@ -36,15 +41,23 @@ header {
     background: linear-gradient(to bottom, #3E1F00, #5D3010);
     padding: 35px 30px 25px;
     text-align: center;
+<<<<<<< HEAD
     border-bottom: 5px solid #C8860A;
     /* Dourado-âmbar como linha de destaque */
+=======
+    border-bottom: 5px solid #C8860A; /* Dourado-âmbar como linha de destaque */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     box-shadow: 0 4px 12px rgba(62, 31, 0, 0.4);
 }
 
 h1 {
     font-family: 'Playfair Display', Georgia, serif;
+<<<<<<< HEAD
     color: #F5D98B;
     /* Dourado suave */
+=======
+    color: #F5D98B;        /* Dourado suave */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     font-size: 3rem;
     letter-spacing: 4px;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
@@ -76,8 +89,12 @@ nav ul {
 
 nav a {
     text-decoration: none;
+<<<<<<< HEAD
     color: #F5D98B;
     /* Dourado no menu */
+=======
+    color: #F5D98B;         /* Dourado no menu */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -122,8 +139,12 @@ section {
 #equipe,
 #galeria {
     background: linear-gradient(135deg, #F5EDD6, #EDD9B8);
+<<<<<<< HEAD
     border-left: 5px solid #B85C38;
     /* Terracota */
+=======
+    border-left: 5px solid #B85C38; /* Terracota */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
 }
 
 #contato,
@@ -147,8 +168,12 @@ table {
 table,
 th,
 td {
+<<<<<<< HEAD
     border: 1px solid #C8A87A !important;
     /* Borda dourada suave, mantendo a regra do exercício */
+=======
+    border: 1px solid #C8A87A !important; /* Borda dourada suave, mantendo a regra do exercício */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
 }
 
 th,
@@ -158,16 +183,22 @@ td {
 }
 
 th {
+<<<<<<< HEAD
     background-color: #3E1F00;
     /* Marrom-café escuro no cabeçalho da tabela */
     color: #F5D98B;
     /* Texto dourado */
+=======
+    background-color: #3E1F00;  /* Marrom-café escuro no cabeçalho da tabela */
+    color: #F5D98B;             /* Texto dourado */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
 }
 
 tbody tr:nth-child(even) {
+<<<<<<< HEAD
     background-color: #FDF6E3;
     /* Listras zebra em creme suave */
 }
@@ -175,6 +206,13 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #F5D98B33;
     /* Hover dourado translúcido */
+=======
+    background-color: #FDF6E3;  /* Listras zebra em creme suave */
+}
+
+tbody tr:hover {
+    background-color: #F5D98B33; /* Hover dourado translúcido */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
 }
 
 tfoot td {
@@ -187,8 +225,12 @@ tfoot td {
 .video-container {
     max-width: 520px;
     margin: 0 auto;
+<<<<<<< HEAD
     border: 4px solid #C8860A;
     /* Borda dourada */
+=======
+    border: 4px solid #C8860A;  /* Borda dourada */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -213,8 +255,12 @@ video {
 .galeria img {
     width: 280px;
     height: 200px;
+<<<<<<< HEAD
     object-fit: cover;
     /* Não distorce a imagem */
+=======
+    object-fit: cover;      /* Não distorce a imagem */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     border: 3px solid #C8860A;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(62, 31, 0, 0.2);
@@ -239,12 +285,20 @@ video {
 /* 7. RODAPÉ (Café) */
 footer {
     background: linear-gradient(to bottom, #3E1F00, #2A1000);
+<<<<<<< HEAD
     color: #C8A87A;
     /* Creme-dourado suave */
+=======
+    color: #C8A87A;             /* Creme-dourado suave */
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
     text-align: center;
     padding: 25px;
     margin-top: 50px;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     border-top: 4px solid #C8860A;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
