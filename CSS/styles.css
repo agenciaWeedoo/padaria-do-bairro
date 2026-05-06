@@ -1,3 +1,12 @@
+/* ============================================================
+   PADARIA DO BAIRRO — Folha de Estilos
+   Paleta: Creme · Marrom-Café · Dourado · Terracota
+   ============================================================ */
+
+/* --- Importação de Fontes (Google Fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+
 /* 1. RESET E ESTILO GERAL */
 * {
     margin: 0;
@@ -6,10 +15,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #F5F5DC;
-    /* Bege Claro */
-    color: #333;
+    font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #F5EDD6; /* Parchment — fundo geral creme-pergaminho */
+    color: #3E1F00;            /* Marrom-café escuro para texto principal */
+    line-height: 1.6;
 }
 
 /* Regra Global para Imagens (Evita que fiquem gigantes) */
@@ -19,66 +28,104 @@ img {
     display: block;
 }
 
+
 /* 2. CABEÇALHO (Creme e Amarelo) */
 header {
-    background: linear-gradient(to bottom, #FFFDD0, #F9E076);
-    padding: 30px;
+    background: linear-gradient(to bottom, #3E1F00, #5D3010);
+    padding: 35px 30px 25px;
     text-align: center;
-    border-bottom: 5px solid #5D4037;
+    border-bottom: 5px solid #C8860A; /* Dourado-âmbar como linha de destaque */
+    box-shadow: 0 4px 12px rgba(62, 31, 0, 0.4);
 }
 
 h1 {
-    color: #5D4037;
-    font-size: 2.8rem;
-    letter-spacing: 3px;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #F5D98B;        /* Dourado suave */
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #5D3010;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #C8860A;
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #5D3010;
+    margin: 20px 0 8px;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     list-style: none;
-    margin-top: 15px;
+    margin-top: 18px;
+    flex-wrap: wrap;
 }
 
 nav a {
     text-decoration: none;
-    color: #C62828;
-    font-weight: bold;
+    color: #F5D98B;         /* Dourado no menu */
+    font-weight: 700;
+    font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s, color 0.25s;
 }
+
+nav a:hover {
+    color: #ffffff;
+    border-bottom-color: #C8860A;
+}
+
 
 /* 3. BLOCOS COLORIDOS (Gradientes) */
 section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    border-radius: 10px;
+    padding: 45px 30px;
+    max-width: 960px;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(62, 31, 0, 0.08);
 }
 
 #video-destaque {
-    background-color: #FFFDD0;
+    background-color: #3E1F00;
     text-align: center;
+    border: 3px solid #C8860A;
 }
 
 #sobre {
-    background: linear-gradient(135deg, #F9E076, #F5F5DC);
+    background: linear-gradient(135deg, #FDF6E3, #F0E3C0);
+    border-left: 5px solid #C8860A;
 }
 
 #cardapio {
-    background: linear-gradient(135deg, #ffffff, #F5F5DC);
+    background: linear-gradient(135deg, #ffffff, #FDF6E3);
+    border-left: 5px solid #5D3010;
 }
 
 #ambiente,
 #equipe,
 #galeria {
-    background: linear-gradient(135deg, #FFE0E0, #FFF5F5);
+    background: linear-gradient(135deg, #F5EDD6, #EDD9B8);
+    border-left: 5px solid #B85C38; /* Terracota */
 }
 
 #contato,
 #horarios {
-    background: linear-gradient(to bottom, #F5F5DC, #E7D7C1);
+    background: linear-gradient(to bottom, #FDF6E3, #F0E3C0);
+    border-left: 5px solid #5D3010;
 }
+
 
 /* 4. TABELAS (Bordas Pretas Sólidas) */
 table {
@@ -86,39 +133,60 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(62, 31, 0, 0.1);
 }
 
 table,
 th,
 td {
-    border: 2px solid #000000 !important;
+    border: 1px solid #C8A87A !important; /* Borda dourada suave, mantendo a regra do exercício */
 }
 
 th,
 td {
-    padding: 12px;
+    padding: 13px 15px;
     text-align: left;
 }
 
 th {
-    background-color: #5D4037;
-    color: white;
+    background-color: #3E1F00;  /* Marrom-café escuro no cabeçalho da tabela */
+    color: #F5D98B;             /* Texto dourado */
     text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
+
+tbody tr:nth-child(even) {
+    background-color: #FDF6E3;  /* Listras zebra em creme suave */
+}
+
+tbody tr:hover {
+    background-color: #F5D98B33; /* Hover dourado translúcido */
+}
+
+tfoot td {
+    background-color: #5D3010;
+    color: #F5D98B;
+}
+
 
 /* 5. VÍDEO (Centralizado e Menor) */
 .video-container {
-    max-width: 500px;
+    max-width: 520px;
     margin: 0 auto;
-    border: 4px solid #5D4037;
-    border-radius: 8px;
+    border: 4px solid #C8860A;  /* Borda dourada */
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 video {
     width: 100%;
     display: block;
 }
+
 
 /* 6. GALERIA E IMAGENS INDIVIDUAIS */
 .galeria {
@@ -133,25 +201,36 @@ video {
 .galeria img {
     width: 280px;
     height: 200px;
-    object-fit: cover;
-    /* Não distorce a imagem */
-    border: 3px solid #5D4037;
-    border-radius: 5px;
+    object-fit: cover;      /* Não distorce a imagem */
+    border: 3px solid #C8860A;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(62, 31, 0, 0.2);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.galeria img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(62, 31, 0, 0.3);
 }
 
 /* Ajuste específico para a imagem da Fachada (Seção Sobre) */
 .img-centralizada img {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 4px solid #5D4037;
-    border-radius: 8px;
+    max-width: 620px;
+    margin: 20px auto 0;
+    border: 4px solid #C8860A;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(62, 31, 0, 0.2);
 }
+
 
 /* 7. RODAPÉ (Café) */
 footer {
-    background-color: #5D4037;
-    color: white;
+    background: linear-gradient(to bottom, #3E1F00, #2A1000);
+    color: #C8A87A;             /* Creme-dourado suave */
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-top: 4px solid #C8860A;
 }
