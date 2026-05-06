@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #aa412ca7;
+    background-color: #91790ea7;
     /* Bege Claro */
     color: #333;
 }
@@ -15,20 +15,37 @@ body {
 /* Regra Global para Imagens (Evita que fiquem gigantes) */
 img {
     max-width: 100%;
-    height: auto;
+    /* height: auto;*/
     display: block;
 }
 
 /* 2. CABEÇALHO (Creme e Amarelo) */
 header {
-    background: linear-gradient(to bottom, #FFFDD0, #F9E076);
-    padding: 30px;
+    background: linear-gradient(270deg, #f5ef83, #d9a930, #fffdd0);
+    background-size: 600% 600%;
+    animation: auroraPadaria 15s ease infinite;
+
+    padding: 40px 30px;
     text-align: center;
-    border-bottom: 5px solid #5D4037;
+    border-bottom: 3px solid #5D4037;
+}
+
+@keyframes auroraPadaria {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
-    color: #5D4037;
+    color: #432c25;
     font-size: 2.8rem;
     letter-spacing: 3px;
 }
@@ -43,7 +60,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #C62828;
+    color: #7d1a1a;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -57,7 +74,7 @@ section {
 }
 
 #video-destaque {
-    background-color: #FFFDD0;
+    background-color: #ecfacc;
     text-align: center;
 }
 
@@ -85,7 +102,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: white;
+    background: rgb(218, 189, 189);
 }
 
 table,
@@ -132,7 +149,7 @@ video {
 /* Controla o tamanho das imagens na galeria e na seção equipe */
 .galeria img {
     width: 280px;
-    height: 200px;
+    /*height: 200px;*/
     object-fit: cover;
     /* Não distorce a imagem */
     border: 3px solid #5D4037;
@@ -149,7 +166,7 @@ video {
 
 /* 7. RODAPÉ (Café) */
 footer {
-    background-color: #5D4037;
+    background-color: #31160d61;
     color: white;
     text-align: center;
     padding: 20px;
