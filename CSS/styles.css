@@ -1,12 +1,3 @@
-/* ============================================================
-   PADARIA DO BAIRRO — Folha de Estilos
-   Paleta: Creme · Marrom-Café · Dourado · Terracota
-   ============================================================ */
-
-/* --- Importação de Fontes (Google Fonts) --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
-
-
 /* 1. RESET E ESTILO GERAL */
 * {
     margin: 0;
@@ -15,16 +6,10 @@
 }
 
 body {
-    font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
-    <<<<<<< HEAD background-color: #F5EDD6;
-    /* Parchment — fundo geral creme-pergaminho */
-    color: #3E1F00;
-    /* Marrom-café escuro para texto principal */
-    =======background-color: #F5EDD6;
-    /* Parchment — fundo geral creme-pergaminho */
-    color: #3E1F00;
-    /* Marrom-café escuro para texto principal */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #aa412ca7;
+    /* Bege Claro */
+    color: #333;
 }
 
 /* Regra Global para Imagens (Evita que fiquem gigantes) */
@@ -34,117 +19,66 @@ img {
     display: block;
 }
 
-
 /* 2. CABEÇALHO (Creme e Amarelo) */
 header {
-    background: linear-gradient(to bottom, #3E1F00, #5D3010);
-    padding: 35px 30px 25px;
+    background: linear-gradient(to bottom, #FFFDD0, #F9E076);
+    padding: 30px;
     text-align: center;
-    <<<<<<< HEAD border-bottom: 5px solid #C8860A;
-    /* Dourado-âmbar como linha de destaque */
-    =======border-bottom: 5px solid #C8860A;
-    /* Dourado-âmbar como linha de destaque */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 box-shadow: 0 4px 12px rgba(62, 31, 0, 0.4);
+    border-bottom: 5px solid #5D4037;
 }
 
 h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    <<<<<<< HEAD color: #F5D98B;
-    /* Dourado suave */
-    =======color: #F5D98B;
-    /* Dourado suave */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 font-size: 3rem;
-    letter-spacing: 4px;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: #5D3010;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #C8860A;
-    padding-bottom: 8px;
-}
-
-h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: #5D3010;
-    margin: 20px 0 8px;
+    color: #5D4037;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     list-style: none;
-    margin-top: 18px;
-    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 nav a {
     text-decoration: none;
-    <<<<<<< HEAD color: #F5D98B;
-    /* Dourado no menu */
-    =======color: #F5D98B;
-    /* Dourado no menu */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 font-weight: 700;
-    font-size: 0.85rem;
+    color: #C62828;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 4px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.25s, color 0.25s;
 }
-
-nav a:hover {
-    color: #ffffff;
-    border-bottom-color: #C8860A;
-}
-
 
 /* 3. BLOCOS COLORIDOS (Gradientes) */
 section {
-    padding: 45px 30px;
-    max-width: 960px;
-    margin: 25px auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(62, 31, 0, 0.08);
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
 #video-destaque {
-    background-color: #3E1F00;
+    background-color: #FFFDD0;
     text-align: center;
-    border: 3px solid #C8860A;
 }
 
 #sobre {
-    background: linear-gradient(135deg, #FDF6E3, #F0E3C0);
-    border-left: 5px solid #C8860A;
+    background: linear-gradient(135deg, #f3e39bb0, #F5F5DC);
 }
 
 #cardapio {
-    background: linear-gradient(135deg, #ffffff, #FDF6E3);
-    border-left: 5px solid #5D3010;
+    background: linear-gradient(135deg, #ffffff, #F5F5DC);
 }
 
 #ambiente,
 #equipe,
 #galeria {
-    background: linear-gradient(135deg, #F5EDD6, #EDD9B8);
-    <<<<<<< HEAD border-left: 5px solid #B85C38;
-    /* Terracota */
-    =======border-left: 5px solid #B85C38;
-    /* Terracota */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
+    background: linear-gradient(135deg, #b79696, #FFF5F5);
 }
 
 #contato,
 #horarios {
-    background: linear-gradient(to bottom, #FDF6E3, #F0E3C0);
-    border-left: 5px solid #5D3010;
+    background: linear-gradient(to bottom, #F5F5DC, #E7D7C1);
 }
-
 
 /* 4. TABELAS (Bordas Pretas Sólidas) */
 table {
@@ -152,83 +86,39 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     background: white;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(62, 31, 0, 0.1);
 }
 
 table,
 th,
 td {
-    <<<<<<< HEAD border: 1px solid #C8A87A !important;
-    /* Borda dourada suave, mantendo a regra do exercício */
-    =======border: 1px solid #C8A87A !important;
-    /* Borda dourada suave, mantendo a regra do exercício */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
+    border: 2px solid #000000 !important;
 }
 
 th,
 td {
-    padding: 13px 15px;
+    padding: 12px;
     text-align: left;
 }
 
 th {
-    <<<<<<< HEAD background-color: #3E1F00;
-    /* Marrom-café escuro no cabeçalho da tabela */
-    color: #F5D98B;
-    /* Texto dourado */
-    =======background-color: #3E1F00;
-    /* Marrom-café escuro no cabeçalho da tabela */
-    color: #F5D98B;
-    /* Texto dourado */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    background-color: #5D4037;
+    color: white;
+    text-transform: uppercase;
 }
-
-tbody tr:nth-child(even) {
-    <<<<<<< HEAD background-color: #FDF6E3;
-    /* Listras zebra em creme suave */
-}
-
-tbody tr:hover {
-    background-color: #F5D98B33;
-    /* Hover dourado translúcido */
-    =======background-color: #FDF6E3;
-    /* Listras zebra em creme suave */
-}
-
-tbody tr:hover {
-    background-color: #F5D98B33;
-    /* Hover dourado translúcido */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
-}
-
-tfoot td {
-    background-color: #5D3010;
-    color: #F5D98B;
-}
-
 
 /* 5. VÍDEO (Centralizado e Menor) */
 .video-container {
-    max-width: 520px;
+    max-width: 500px;
     margin: 0 auto;
-    <<<<<<< HEAD border: 4px solid #C8860A;
-    /* Borda dourada */
-    =======border: 4px solid #C8860A;
-    /* Borda dourada */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 border-radius: 10px;
+    border: 4px solid #5D4037;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 video {
     width: 100%;
     display: block;
 }
-
 
 /* 6. GALERIA E IMAGENS INDIVIDUAIS */
 .galeria {
@@ -243,48 +133,25 @@ video {
 .galeria img {
     width: 280px;
     height: 200px;
-    <<<<<<< HEAD object-fit: cover;
+    object-fit: cover;
     /* Não distorce a imagem */
-    =======object-fit: cover;
-    /* Não distorce a imagem */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 border: 3px solid #C8860A;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(62, 31, 0, 0.2);
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.galeria img:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(62, 31, 0, 0.3);
+    border: 3px solid #5D4037;
+    border-radius: 5px;
 }
 
 /* Ajuste específico para a imagem da Fachada (Seção Sobre) */
 .img-centralizada img {
-    max-width: 620px;
-    margin: 20px auto 0;
-    border: 4px solid #C8860A;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(62, 31, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid #5D4037;
+    border-radius: 8px;
 }
-
 
 /* 7. RODAPÉ (Café) */
 footer {
-    background: linear-gradient(to bottom, #3E1F00, #2A1000);
-    <<<<<<< HEAD color: #C8A87A;
-    /* Creme-dourado suave */
-    =======color: #C8A87A;
-    /* Creme-dourado suave */
-    >>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3 text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    border-top: 4px solid #C8860A;
-    <<<<<<< HEAD
+    background-color: #5D4037;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
-
-=======
-}
-
->>>>>>>e659b6e56dedbcd0243ab6ee6b223b3923b76ea3
