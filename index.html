@@ -2,70 +2,174 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Configuração de caracteres e responsividade (Atividade 1) -->
+    <!-- Atividade 3: Metadados e Acessibilidade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padaria do Bairro - Pães Artesanais e Café Fresco</title>
-    <!-- Link para o arquivo CSS externo (Atividade 4) -->
-    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Padaria do Bairro | Tradição e Sabor Artesanal</title>
+    <!-- Link para o CSS seguindo a estrutura de pastas da Atividade 3 -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- Cabeçalho principal do site -->
+    <!-- Cabeçalho: Título e Menu de Navegação (Atividade 1 e 2) -->
     <header>
-        <!-- Nome da padaria em H1 (Atividade 2) -->
         <h1>Padaria do Bairro</h1>
-        <p>O sabor do pão quentinho toda manhã.</p>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#ambiente">Ambiente</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Conteúdo principal do site -->
     <main>
+        <!-- Vídeo Institucional (Atividade 2: Controles e Usabilidade) -->
+        <section id="video-destaque">
+            <div class="video-container">
+                <video controls>
+                    <!-- Caminho atualizado conforme Atividade 3 -->
+                    <source src="Mídia/Vídeos/cena-padaria.mp4" type="video/mp4">
+                    Seu navegador não suporta o player de vídeo.
+                </video>
+            </div>
+        </section>
 
-        <!-- Seção: Sobre Nós (Atividade 2) -->
+        <!-- Seção Sobre (Atividade 2: Uso de Imagens e Alts) -->
         <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Fundada em 1995, a Padaria do Bairro nasceu do sonho de oferecer produtos artesanais feitos com
-                fermentação natural e ingredientes locais. Nossa missão é trazer o aconchego do café da tarde para a sua
-                mesa.</p>
+            <h2>Nossa História</h2>
+            <p>Desde 1995, transformando farinha e água em arte. Nossa missão é a qualidade absoluta e o respeito ao
+                tempo da massa.</p>
+            <div class="img-centralizada">
+                <!-- Imagem da fachada integrada à nova estrutura -->
+                <img src="Mídia/Imagens/fachada-padaria-do-bairro-banner.png"
+                    alt="Fachada elegante da Padaria do Bairro com iluminação quente e estilo rústico">
+            </div>
         </section>
 
-        <!-- Seção: Nossos Produtos (Atividade 2 e 3) -->
-        <section id="produtos">
-            <h2>Nossos Produtos</h2>
-            <p>Conheça nossa variedade de delícias produzidas diariamente por nossos mestres padeiros:</p>
-            <!-- Lista não-ordenada com 5 produtos (Atividade 3) -->
-            <ul>
-                <li>Pão Francês Tradicional</li>
-                <li>Pão de Queijo Mineiro</li>
-                <li>Croissant de Manteiga</li>
-                <li>Bolo de Cenoura com Chocolate</li>
-                <li>Bagunça de Frutas (Sazonal)</li>
-            </ul>
+        <!-- Atividade 1: Tabela de Cardápio Completa (10 Produtos) -->
+        <section id="cardapio">
+            <h2>Cardápio Artesanal</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Pães -->
+                    <tr>
+                        <td>Pães</td>
+                        <td>Pão Francês</td>
+                        <td>Clássico, crocante e sempre quentinho</td>
+                        <td>R$ 0,50/un</td>
+                    </tr>
+                    <tr>
+                        <td>Pães</td>
+                        <td>Sourdough Clássico</td>
+                        <td>Fermentação natural de 48h</td>
+                        <td>R$ 22,00</td>
+                    </tr>
+                    <tr>
+                        <td>Pães</td>
+                        <td>Baguete Francesa</td>
+                        <td>Massa leve com crosta firme</td>
+                        <td>R$ 12,00</td>
+                    </tr>
+                    <!-- Doces -->
+                    <tr>
+                        <td>Doces</td>
+                        <td>Bolo de Chocolate</td>
+                        <td>Massa fofinha com calda de brigadeiro</td>
+                        <td>R$ 45,00</td>
+                    </tr>
+                    <tr>
+                        <td>Doces</td>
+                        <td>Torta de Morango</td>
+                        <td>Creme patissière com morangos frescos</td>
+                        <td>R$ 15,00/fatia</td>
+                    </tr>
+                    <tr>
+                        <td>Doces</td>
+                        <td>Sonho de Creme</td>
+                        <td>Tradicional com recheio artesanal</td>
+                        <td>R$ 8,50</td>
+                    </tr>
+                    <!-- Salgados -->
+                    <tr>
+                        <td>Salgados</td>
+                        <td>Coxinha de Frango</td>
+                        <td>Com requeijão cremoso e massa de batata</td>
+                        <td>R$ 9,00</td>
+                    </tr>
+                    <tr>
+                        <td>Salgados</td>
+                        <td>Croissant de Presunto/Queijo</td>
+                        <td>Massa folhada na manteiga francesa</td>
+                        <td>R$ 16,00</td>
+                    </tr>
+                    <tr>
+                        <td>Salgados</td>
+                        <td>Esfirra de Carne</td>
+                        <td>Receita tradicional com tempero especial</td>
+                        <td>R$ 7,50</td>
+                    </tr>
+                    <!-- Cafeteria -->
+                    <tr>
+                        <td>Cafeteria</td>
+                        <td>Espresso Duplo</td>
+                        <td>Grãos selecionados 100% Arábica</td>
+                        <td>R$ 8,00</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- Seção: Diferenciais (Atividade 2 e 3) -->
-        <section id="diferenciais">
-            <h2>Nossos Diferenciais</h2>
-            <h3>Por que escolher a nossa padaria?</h3>
-            <!-- Lista de especialidades (Atividade 3) -->
-            <ul>
-                <li>Fermentação Natural (Levain)</li>
-                <li>Ingredientes 100% Orgânicos</li>
-                <li>Entrega Grátis no Bairro</li>
-            </ul>
-            <p>Garantimos a máxima qualidade em cada fornada, respeitando o tempo de maturação de cada massa para um
-                sabor incomparável.</p>
+        <!-- Atividade 2: Galeria Temática (Mínimo 5 imagens) -->
+        <section id="ambiente">
+            <h2>Nosso Ambiente e Produtos</h2>
+            <div class="galeria">
+                <!-- Imagens de Produtos -->
+                <img src="Mídia/Imagens/cesto-de-paes-da-padaria-do-bairro.png"
+                    alt="Cesto com pães franceses dourados e crocantes">
+                <img src="Mídia/Imagens/croissant-prato-ceramica-padaria-do-bairro.png"
+                    alt="Croissant folhado servido em prato de cerâmica">
+                <!-- Imagens de Ambiente -->
+                <img src="Mídia/Imagens/grupo-pessoas-padaria-mesa-comendo.png"
+                    alt="Grupo de amigos compartilhando uma refeição na padaria">
+                <img src="Mídia/Imagens/meninas-padaria-mesa-comendo.png" alt="Duas jovens conversando e tomando café">
+                <img src="Mídia/Imagens/pessoas-padaria-mesa-comendo.png"
+                    alt="Clientes aproveitando o café da manhã no balcão">
+                <img src="Mídia/Imagens/close-cafe-mesa.png"
+                    alt="Close de uma xícara de café espresso com espuma cremosa">
+            </div>
         </section>
 
-        <!-- Seção: Localização e Horários (Atividade 2 e 3) -->
+        <!-- Seção Equipe (Atividade 2: Processo e Pessoas) -->
+        <section id="equipe">
+            <h2>Mestres Padeiros</h2>
+            <p>Conheça quem coloca a mão na massa todos os dias para garantir o sabor artesanal.</p>
+            <div class="galeria">
+                <img src="Mídia/Imagens/chef-padeiro-preparando-massa.png"
+                    alt="Nosso renomado Chef Padeiro preparando uma massa">
+                <img src="Mídia/Imagens/time-da-padaria.jpeg"
+                    alt="Toda a equipe da Padaria do Bairro reunida e sorridente">
+            </div>
+        </section>
+
+        <!-- Atividade 1: Tabela de Horários Completa -->
         <section id="contato">
             <h2>Localização e Horários</h2>
-            <p>Estamos localizados na Rua das Flores, nº 123, bem no coração do bairro.</p>
+            <p>Estamos localizados na Rua das Flores, nº 123, Bairro do Sol.</p>
 
             <h3>Horário de Funcionamento</h3>
-            <!-- Tabela para os horários (Substituindo a lista ordenada) -->
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th>Dia da semana</th>
@@ -109,9 +213,9 @@
 
     </main>
 
-    <!-- Rodapé da página -->
+    <!-- Rodapé (Atividade 3: Créditos e Documentação) -->
     <footer>
-        <p>&copy; 2026 Padaria do Bairro - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Padaria do Bairro - Desenvolvido com excelência por Agência Weedoo.</p>
     </footer>
 
 </body>

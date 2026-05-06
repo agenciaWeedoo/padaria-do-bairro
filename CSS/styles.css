@@ -1,4 +1,4 @@
-/* 1. Reset e Estilos Gerais */
+/* 1. RESET E CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -6,94 +6,188 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fdfdfd;
-    max-width: 900px;
+    /* Cor de fundo principal do site (Bege Claro) */
+    background-color: #F5F5DC;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding-bottom: 40px;
 }
 
-/* 2. Cabeçalho (Atividade 1) */
+/* 2. CABEÇALHO (Título sobre o Menu) */
 header {
+    /* Gradiente do Creme para o Amarelo Suave */
+    background: linear-gradient(180deg, #FFFDD0 0%, #F9E076 100%);
     text-align: center;
-    padding-bottom: 30px;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #5d4037; /* Linha temática marrom */
+    padding: 40px 20px;
+    border-bottom: 5px solid #5D4037;
+    /* Linha cor de café */
 }
 
 h1 {
-    color: #5d4037;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* 3. Seções de Conteúdo (Atividade 2) */
-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    color: #8d6e63;
-    border-left: 5px solid #5d4037;
-    padding-left: 15px;
+    color: #5D4037;
+    /* Cor de Café */
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
-    margin: 15px 0;
-    color: #444;
+/* Estilização do Menu de Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #C62828;
+    /* Vermelho para destaque */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #5D4037;
+    text-decoration: underline;
+}
+
+/* 3. ESTILIZAÇÃO DOS BLOCOS (Cores e Gradientes variados) */
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Bloco Vídeo: Fundo Creme */
+#video-destaque {
+    background-color: #FFFDD0;
+}
+
+/* Bloco Sobre: Gradiente Amarelo para Bege */
+#sobre {
+    background: linear-gradient(135deg, #F9E076 0%, #F5F5DC 100%);
+}
+
+/* Bloco Cardápio: Branco para destacar a tabela */
+#cardapio {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Bloco Ambiente: Tons quentes de Vermelho suave */
+#ambiente {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFE0E0 100%);
+}
+
+/* Bloco Equipe: Bege */
+#equipe {
+    background-color: #F5F5DC;
+}
+
+/* Bloco Contato: Gradiente Café/Bege */
+#contato {
+    background: linear-gradient(180deg, #F5F5DC 0%, #E7D7C1 100%);
+}
+
+/* 4. TIPOGRAFIA INTERNA */
+h2 {
+    color: #5D4037;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 2px solid #C62828;
+    display: inline-block;
+    width: 100%;
 }
 
 p {
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-/* 4. Listas (Atividade 3) */
-ul, ol {
-    margin-left: 30px;
     margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-li {
-    margin-bottom: 8px;
-}
-
-/* 5. TABELA COM BORDAS SÓLIDAS PRETAS (Ajuste solicitado) */
-/* Aplicamos a borda individualmente em cada elemento para garantir visibilidade */
-table {
-    border-collapse: collapse; /* Une as bordas das células */
-    width: 100%;
+/* 5. VÍDEO (Menor e Centralizado) */
+.video-container {
     max-width: 600px;
-    margin: 20px 0;
-    background-color: #fff;
+    /* Tamanho reduzido como solicitado */
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 33.75%;
+    /* Proporção menor */
+    height: 0;
+    overflow: hidden;
+    border: 5px solid #5D4037;
+    border-radius: 10px;
 }
 
-/* Forçamos a borda preta sólida em todas as tags da tabela */
-table, th, td {
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 6. TABELAS (Bordas Pretas Sólidas) */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
     border: 2px solid #000000 !important;
 }
 
-th, td {
-    padding: 12px 15px;
+th,
+td {
+    padding: 15px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    background-color: #5D4037;
+    color: white;
 }
 
-/* 6. Rodapé (Atividade 1) */
+/* 7. GALERIA DE IMAGENS */
+.galeria {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #5D4037;
+}
+
+/* 8. RODAPÉ */
 footer {
+    background-color: #5D4037;
+    color: white;
     text-align: center;
-    padding-top: 20px;
+    padding: 30px;
     margin-top: 50px;
-    font-size: 0.9rem;
-    color: #777;
-    border-top: 1px solid #ddd;
 }
