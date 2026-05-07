@@ -172,3 +172,110 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
+
+/* 8. ESTILIZAÇÃO DO FORMULÁRIO */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    /* Gradiente suave que imita o tom de massa de pão */
+    background: linear-gradient(145deg, #FFFDD0, #F5F5DC);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(93, 64, 55, 0.1),
+        -10px -10px 30px rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(93, 64, 55, 0.05);
+}
+
+fieldset {
+    border: 2px solid #5D4037;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    /* Efeito de transparência sutil */
+}
+
+legend {
+    font-weight: bold;
+    color: #C62828;
+    /* Vermelho destaque */
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+label {
+    font-weight: 600;
+    color: #5D4037;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Campos de entrada, Select e Textarea */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E7D7C1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Surreal ao focar nos campos */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #C62828;
+    box-shadow: 0 0 10px rgba(198, 40, 40, 0.2);
+    transform: translateY(-2px);
+    /* Pequena flutuação */
+}
+
+/* Botões de Ação */
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+input[type="submit"] {
+    background: #C62828;
+    color: white;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+}
+
+input[type="submit"]:hover {
+    background: #5D4037;
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.4);
+    transform: scale(1.05);
+}
+
+input[type="reset"] {
+    background: transparent;
+    border: 2px solid #5D4037;
+    color: #5D4037;
+}
+
+input[type="reset"]:hover {
+    background: rgba(93, 64, 55, 0.1);
+}
