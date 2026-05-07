@@ -50,9 +50,11 @@ h1 {
     letter-spacing: 3px;
 }
 
+/* Atualize esta parte no seu arquivo styles.css */
 nav ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Essencial: permite que os links formem uma nova linha se não couberem */
     gap: 20px;
     list-style: none;
     margin-top: 15px;
@@ -63,6 +65,14 @@ nav a {
     color: #7d1a1a;
     font-weight: bold;
     text-transform: uppercase;
+    padding: 5px 10px; /* Cria uma "área de clique" maior, excelente para mobile */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(125, 26, 26, 0.1); /* Efeito de destaque ao passar o mouse */
+    transform: translateY(-2px);
 }
 
 /* 3. BLOCOS COLORIDOS (Gradientes) */

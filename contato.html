@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Padaria do Bairro</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fale Conosco</h1>
+        <nav>
+            <ul><li><a href="index.html">⬅ Voltar ao Início</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Envie sua Mensagem</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informações de Contato</legend>
+                    <label for="nome">👤 Nome completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                    
+                    <label for="email">📧 Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    
+                    <label for="telefone">📞 Telefone (Opcional):</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" pattern="[0-9]{2}[0-9]{8,9}">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes da Mensagem</legend>
+                    <label for="assunto">📋 Assunto:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">-- Selecione um assunto --</option>
+                        <option value="informacoes">ℹ️ Informações gerais</option>
+                        <option value="reclamacao">⚠️ Reclamação</option>
+                        <option value="sugestao">💡 Sugestão</option>
+                        <option value="elogio">🌟 Elogio</option>
+                        <option value="pedido">🎂 Pedido especial</option>
+                        <option value="outros">❓ Outros</option>
+                    </select>
+
+                    <label for="mensagem">✍️ Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" minlength="10" placeholder="Digite sua mensagem (mínimo de 10 caracteres)..." required></textarea>
+                </fieldset>
+
+                <div class="botoes-form">
+                    <input type="submit" value="Enviar Mensagem">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p></footer>
+</body>
+</html>

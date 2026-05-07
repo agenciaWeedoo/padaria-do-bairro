@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Padaria do Bairro</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Avalie Nossa Padaria</h1>
+        <nav><ul><li><a href="index.html">⬅ Voltar ao Início</a></li></ul></nav>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Sua Opinião Importa!</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Identificação (Opcional)</legend>
+                    <label for="nome_feed">👤 Nome:</label>
+                    <input type="text" id="nome_feed" name="nome_feed">
+                    <label for="email_feed">📧 Email:</label>
+                    <input type="email" id="email_feed" name="email_feed">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sua Experiência</legend>
+                    <label for="produto_servico">🍞 Produto/Serviço avaliado:</label>
+                    <select id="produto_servico" name="produto_servico" required>
+                        <option value="">-- Escolha uma opção --</option>
+                        <option value="paes">🥖 Pães tradicionais</option>
+                        <option value="doces">🍰 Doces e bolos</option>
+                        <option value="salgados">🥐 Salgados</option>
+                        <option value="atendimento">👥 Atendimento</option>
+                        <option value="ambiente">🏠 Ambiente</option>
+                        <option value="precos">💲 Preços</option>
+                    </select><br><br>
+
+                    <label>Avaliação Geral:</label>
+                    <div style="margin-bottom: 15px;">
+                        <input type="radio" id="aval_exc" name="avaliacao" value="excelente" required> <label for="aval_exc">🌟 Excelente</label><br>
+                        <input type="radio" id="aval_bom" name="avaliacao" value="bom"> <label for="aval_bom">👍 Bom</label><br>
+                        <input type="radio" id="aval_reg" name="avaliacao" value="regular"> <label for="aval_reg">😐 Regular</label><br>
+                        <input type="radio" id="aval_ruim" name="avaliacao" value="ruim"> <label for="aval_ruim">👎 Ruim</label>
+                    </div>
+
+                    <label for="comentarios">✍️ Comentários:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" placeholder="Conte-nos os detalhes..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Permissões</legend>
+                    <input type="checkbox" id="recomenda" name="recomenda" value="sim">
+                    <label for="recomenda">👍 Recomendaria para amigos</label><br><br>
+                    
+                    <input type="checkbox" id="publicar" name="publicar" value="sim">
+                    <label for="publicar">📰 Autoriza publicação do depoimento em nossas redes</label>
+                </fieldset>
+
+                <div class="botoes-form">
+                    <input type="submit" value="Enviar Avaliação">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p></footer>
+</body>
+</html>

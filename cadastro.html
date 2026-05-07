@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Newsletter | Padaria do Bairro</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Clube de Vantagens</h1>
+        <nav><ul><li><a href="index.html">⬅ Voltar ao Início</a></li></ul></nav>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Cadastre-se e receba novidades!</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Seção 1 - Dados Pessoais</legend>
+                    <label for="cad_nome">👤 Nome completo:</label>
+                    <input type="text" id="cad_nome" name="cad_nome" required>
+                    
+                    <label for="cad_email">📧 Email:</label>
+                    <input type="email" id="cad_email" name="cad_email" required>
+                    
+                    <label for="cad_tel">📞 Telefone:</label>
+                    <input type="tel" id="cad_tel" name="cad_tel" pattern="[0-9]{10,11}" placeholder="Somente números" required>
+                    
+                    <label for="cad_nasc">🎂 Data de nascimento:</label>
+                    <input type="date" id="cad_nasc" name="cad_nasc">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seção 2 - Endereço</legend>
+                    <label for="cad_rua">🏠 Rua:</label>
+                    <input type="text" id="cad_rua" name="cad_rua" required>
+                    
+                    <label for="cad_num">🔢 Número:</label>
+                    <input type="number" id="cad_num" name="cad_num" required>
+                    
+                    <label for="cad_bairro">🏘️ Bairro:</label>
+                    <input type="text" id="cad_bairro" name="cad_bairro" required>
+                    
+                    <label for="cad_cep">📮 CEP:</label>
+                    <input type="text" id="cad_cep" name="cad_cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seção 3 - Preferências</legend>
+                    <p style="font-weight: 600; color: #5D4037; margin-bottom: 8px;">Tipos de produtos favoritos:</p>
+                    <input type="checkbox" id="pref_paes" name="preferencias" value="paes"> <label for="pref_paes">🥖 Pães artesanais</label><br>
+                    <input type="checkbox" id="pref_doces" name="preferencias" value="doces"> <label for="pref_doces">🍰 Doces e bolos</label><br>
+                    <input type="checkbox" id="pref_salgados" name="preferencias" value="salgados"> <label for="pref_salgados">🥐 Salgados</label><br>
+                    <input type="checkbox" id="pref_diet" name="preferencias" value="diet"> <label for="pref_diet">🥗 Produtos diet/light</label><br>
+                    <input type="checkbox" id="pref_integrais" name="preferencias" value="integrais"> <label for="pref_integrais">🌾 Produtos integrais</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seção 4 - Termos de Uso</legend>
+                    <input type="checkbox" id="aceita_promo" name="aceita_promo" required>
+                    <label for="aceita_promo">📩 Aceita receber promoções por email (Obrigatório)</label><br><br>
+                    
+                    <input type="checkbox" id="aceita_termos" name="aceita_termos" required>
+                    <label for="aceita_termos">✅ Aceita os termos de uso e política de privacidade (Obrigatório)</label>
+                </fieldset>
+
+                <div class="botoes-form">
+                    <input type="submit" value="Finalizar Cadastro">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p></footer>
+</body>
+</html>
