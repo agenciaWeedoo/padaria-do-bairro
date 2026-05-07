@@ -1,4 +1,4 @@
-/* 1. Reset e Estilos Gerais */
+/* 1. RESET E ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,94 +6,276 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #91790ea7;
+    /* Bege Claro */
     color: #333;
-    background-color: #fdfdfd;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
 }
 
-/* 2. Cabeçalho (Atividade 1) */
+/* Regra Global para Imagens (Evita que fiquem gigantes) */
+img {
+    max-width: 100%;
+    /* height: auto;*/
+    display: block;
+}
+
+/* 2. CABEÇALHO (Creme e Amarelo) */
 header {
+    background: linear-gradient(270deg, #f5ef83, #d9a930, #fffdd0);
+    background-size: 600% 600%;
+    animation: auroraPadaria 15s ease infinite;
+
+    padding: 40px 30px;
     text-align: center;
-    padding-bottom: 30px;
-    margin-bottom: 40px;
-    border-bottom: 3px solid #5d4037; /* Linha temática marrom */
+    border-bottom: 3px solid #5D4037;
+}
+
+@keyframes auroraPadaria {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
-    color: #5d4037;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    color: #432c25;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
 }
 
-/* 3. Seções de Conteúdo (Atividade 2) */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7d1a1a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 3. BLOCOS COLORIDOS (Gradientes) */
 section {
-    margin-bottom: 40px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
-h2 {
-    color: #8d6e63;
-    border-left: 5px solid #5d4037;
-    padding-left: 15px;
-    margin-bottom: 20px;
+#video-destaque {
+    background-color: #ecfacc;
+    text-align: center;
 }
 
-h3 {
-    margin: 15px 0;
-    color: #444;
+#sobre {
+    background: linear-gradient(135deg, #f3e39bb0, #F5F5DC);
 }
 
-p {
-    margin-bottom: 15px;
-    text-align: justify;
+#cardapio {
+    background: linear-gradient(135deg, #ffffff, #F5F5DC);
 }
 
-/* 4. Listas (Atividade 3) */
-ul, ol {
-    margin-left: 30px;
-    margin-bottom: 20px;
+#ambiente,
+#equipe,
+#galeria {
+    background: linear-gradient(135deg, #b79696, #FFF5F5);
 }
 
-li {
-    margin-bottom: 8px;
+#contato,
+#horarios {
+    background: linear-gradient(to bottom, #F5F5DC, #E7D7C1);
 }
 
-/* 5. TABELA COM BORDAS SÓLIDAS PRETAS (Ajuste solicitado) */
-/* Aplicamos a borda individualmente em cada elemento para garantir visibilidade */
+/* 4. TABELAS (Bordas Pretas Sólidas) */
 table {
-    border-collapse: collapse; /* Une as bordas das células */
     width: 100%;
-    max-width: 600px;
-    margin: 20px 0;
-    background-color: #fff;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgb(218, 189, 189);
 }
 
-/* Forçamos a borda preta sólida em todas as tags da tabela */
-table, th, td {
+table,
+th,
+td {
     border: 2px solid #000000 !important;
 }
 
-th, td {
-    padding: 12px 15px;
+th,
+td {
+    padding: 12px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #5D4037;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* 5. VÍDEO (Centralizado e Menor) */
+.video-container {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 4px solid #5D4037;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+/* 6. GALERIA E IMAGENS INDIVIDUAIS */
+.galeria {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Controla o tamanho das imagens na galeria e na seção equipe */
+.galeria img {
+    width: 280px;
+    /*height: 200px;*/
+    object-fit: cover;
+    /* Não distorce a imagem */
+    border: 3px solid #5D4037;
+    border-radius: 5px;
+}
+
+/* Ajuste específico para a imagem da Fachada (Seção Sobre) */
+.img-centralizada img {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid #5D4037;
+    border-radius: 8px;
+}
+
+/* 7. RODAPÉ (Café) */
+footer {
+    background-color: #31160d61;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* 8. ESTILIZAÇÃO DO FORMULÁRIO */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    /* Gradiente suave que imita o tom de massa de pão */
+    background: linear-gradient(145deg, #FFFDD0, #F5F5DC);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(93, 64, 55, 0.1),
+        -10px -10px 30px rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(93, 64, 55, 0.05);
+}
+
+fieldset {
+    border: 2px solid #5D4037;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    /* Efeito de transparência sutil */
+}
+
+legend {
+    font-weight: bold;
+    color: #C62828;
+    /* Vermelho destaque */
+    padding: 0 15px;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
 
-/* 6. Rodapé (Atividade 1) */
-footer {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 50px;
+label {
+    font-weight: 600;
+    color: #5D4037;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Campos de entrada, Select e Textarea */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E7D7C1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Surreal ao focar nos campos */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #C62828;
+    box-shadow: 0 0 10px rgba(198, 40, 40, 0.2);
+    transform: translateY(-2px);
+    /* Pequena flutuação */
+}
+
+/* Botões de Ação */
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
     font-size: 0.9rem;
-    color: #777;
-    border-top: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    background: #C62828;
+    color: white;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+}
+
+input[type="submit"]:hover {
+    background: #5D4037;
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.4);
+    transform: scale(1.05);
+}
+
+input[type="reset"] {
+    background: transparent;
+    border: 2px solid #5D4037;
+    color: #5D4037;
+}
+
+input[type="reset"]:hover {
+    background: rgba(93, 64, 55, 0.1);
 }
