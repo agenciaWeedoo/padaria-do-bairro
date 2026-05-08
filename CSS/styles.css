@@ -50,7 +50,7 @@ h1 {
     letter-spacing: 3px;
 }
 
-/* Atualize esta parte no seu arquivo styles.css */
+/* Atualizei esta parte no arquivo styles.css */
 nav ul {
     display: flex;
     justify-content: center;
@@ -288,4 +288,8 @@ input[type="reset"] {
 
 input[type="reset"]:hover {
     background: rgba(93, 64, 55, 0.1);
+}
+
+span { font-size: 10px;
+    color: red;
 }

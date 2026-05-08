@@ -19,10 +19,10 @@
                 <fieldset>
                     <legend>Seção 1 - Dados do Cliente</legend>
                     <label for="nome_pedido">👤 Nome completo:</label>
-                    <input type="text" id="nome_pedido" name="nome_pedido" required>
+                    <input type="text" id="nome_pedido" name="nome_pedido" required><br><br>
                     
                     <label for="tel_pedido">📞 Telefone:</label>
-                    <input type="tel" id="tel_pedido" name="tel_pedido" placeholder="Somente números" pattern="[0-9]{10,11}" required>
+                    <input type="tel" id="tel_pedido" name="tel_pedido" placeholder="Somente números" pattern="[0-9]{10,11}" required> <br><br>
                     
                     <label for="email_pedido">📧 Email:</label>
                     <input type="email" id="email_pedido" name="email_pedido" required>
@@ -45,9 +45,6 @@
                         <input type="radio" id="cat_cafeteria" name="tipo_produto" value="cafeteria"> 
                         <label for="cat_cafeteria">Cafeteria</label>
                     </div>
-                
-                    <label for="sabor">🥐 Escolha o Produto:</label>
-                    <legend>Seção 2 - Detalhes do Pedido</legend>
     
     <label for="sabor">🥐 Escolha o Produto:</label>
     
@@ -89,7 +86,7 @@
                         
                         <input type="radio" id="tam_g" name="tamanho" value="grande"> 
                         <label for="tam_g">Grande (Festa)</label>
-                    </div>
+                    </div><br>
                 
                     <label for="data_entrega">📅 Data de entrega:</label>
                     <input type="date" id="data_entrega" name="data_entrega" required>
@@ -98,7 +95,7 @@
                 <fieldset>
                     <legend>Seção 3 - Informações Adicionais</legend>
                     <label for="obs">📝 Observações especiais:</label>
-                    <textarea id="obs" name="obs" rows="4" placeholder="Alguma restrição alimentar ou detalhe estético?"></textarea>
+                    <textarea id="obs" name="obs" rows="4" placeholder="Alguma restrição alimentar ou detalhe estético?"></textarea><br><br>
                     
                     <label for="orcamento">💵 Orçamento máximo (R$):</label>
                     <input type="number" id="orcamento" name="orcamento" min="0" step="0.50" placeholder="Ex: 150.00">
