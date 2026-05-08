@@ -30,29 +30,67 @@
 
                 <fieldset>
                     <legend>Seção 2 - Detalhes do Pedido</legend>
-                    <label>🍰 Tipo de produto:</label>
+                    
+                    <label>🍞 Categoria Principal:</label>
                     <div style="margin-bottom: 15px;">
-                        <input type="radio" id="tipo_bolo" name="tipo_produto" value="bolo" required> <label for="tipo_bolo">Bolo</label>
-                        <input type="radio" id="tipo_torta" name="tipo_produto" value="torta"> <label for="tipo_torta">Torta</label>
-                        <input type="radio" id="tipo_salgado" name="tipo_produto" value="salgado"> <label for="tipo_salgado">Salgados</label>
+                        <input type="radio" id="cat_paes" name="tipo_produto" value="paes" required> 
+                        <label for="cat_paes">Pães</label>
+                        
+                        <input type="radio" id="cat_doces" name="tipo_produto" value="doces"> 
+                        <label for="cat_doces">Doces</label>
+                        
+                        <input type="radio" id="cat_salgados" name="tipo_produto" value="salgados"> 
+                        <label for="cat_salgados">Salgados</label>
+                
+                        <input type="radio" id="cat_cafeteria" name="tipo_produto" value="cafeteria"> 
+                        <label for="cat_cafeteria">Cafeteria</label>
                     </div>
+                
+                    <label for="sabor">🥐 Escolha o Produto:</label>
+                    <legend>Seção 2 - Detalhes do Pedido</legend>
+    
+    <label for="sabor">🥐 Escolha o Produto:</label>
+    
+    <select id="sabor" name="sabor" required>
+        <option value="">-- Selecione um item --</option>
+        
+        <optgroup id="group-paes" label="🥖 Pães">
+            <option value="pao-frances">Pão Francês (R$ 0,50/un)</option>
+            <option value="sourdough">Sourdough Clássico (R$ 22,00)</option>
+            <option value="baguete">Baguete Francesa (R$ 12,00)</option>
+        </optgroup>
 
-                    <label for="sabor">🍫 Sabor/Recheio:</label>
-                    <select id="sabor" name="sabor" required>
-                        <option value="">-- Selecione --</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="morango">Morango</option>
-                        <option value="baunilha">Baunilha</option>
-                        <option value="frango">Frango c/ Catupiry (Salgado)</option>
-                    </select><br><br>
+        <optgroup id="group-doces" label="🍰 Doces">
+            <option value="bolo-chocolate">Bolo de Chocolate (R$ 45,00)</option>
+            <option value="torta-morango">Torta de Morango (R$ 15,00/fatia)</option>
+            <option value="sonho">Sonho de Creme (R$ 8,50)</option>
+        </optgroup>
 
-                    <label>📏 Tamanho:</label>
+        <optgroup id="group-salgados" label="🥨 Salgados">
+            <option value="coxinha">Coxinha de Frango (R$ 9,00)</option>
+            <option value="croissant">Croissant Presunto/Queijo (R$ 16,00)</option>
+            <option value="esfirra">Esfirra de Carne (R$ 7,50)</option>
+        </optgroup>
+
+        <optgroup id="group-cafeteria" label="☕ Cafeteria">
+            <option value="espresso">Espresso Duplo (R$ 8,00)</option>
+        </optgroup>
+    </select>
+
+    <br><br>
+                
+                    <label>📏 Tamanho/Porção:</label>
                     <div style="margin-bottom: 15px;">
-                        <input type="radio" id="tam_p" name="tamanho" value="pequeno" required> <label for="tam_p">Pequeno</label>
-                        <input type="radio" id="tam_m" name="tamanho" value="medio"> <label for="tam_m">Médio</label>
-                        <input type="radio" id="tam_g" name="tamanho" value="grande"> <label for="tam_g">Grande</label>
+                        <input type="radio" id="tam_p" name="tamanho" value="individual" required> 
+                        <label for="tam_p">Individual/Pequeno</label>
+                        
+                        <input type="radio" id="tam_m" name="tamanho" value="medio"> 
+                        <label for="tam_m">Médio (Familiar)</label>
+                        
+                        <input type="radio" id="tam_g" name="tamanho" value="grande"> 
+                        <label for="tam_g">Grande (Festa)</label>
                     </div>
-
+                
                     <label for="data_entrega">📅 Data de entrega:</label>
                     <input type="date" id="data_entrega" name="data_entrega" required>
                 </fieldset>
@@ -75,4 +113,30 @@
     </main>
     <footer><p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p></footer>
 </body>
+<script>
+    const radioButtons = document.querySelectorAll('input[name="tipo_produto"]');
+    const selectSabor = document.getElementById('sabor');
+    const grupos = selectSabor.querySelectorAll('optgroup');
+
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', () => {
+            const categoriaSelecionada = radio.value; // Ex: 'paes', 'doces'
+
+            grupos.forEach(grupo => {
+                // Se o ID do grupo contiver o valor do rádio, ele fica ativo
+                if (grupo.id === `group-${categoriaSelecionada}`) {
+                    grupo.disabled = false;
+                    grupo.style.display = "block";
+                } else {
+                    // Senão, ele fica esmaecido e bloqueado
+                    grupo.disabled = true;
+                    grupo.style.display = "none"; // Ou mantenha apenas o disabled para 'esmaecer'
+                }
+            });
+            
+            // Reseta o select para a opção inicial ao mudar de categoria
+            selectSabor.value = "";
+        });
+    });
+</script>
 </html>
