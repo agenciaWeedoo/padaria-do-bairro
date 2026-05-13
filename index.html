@@ -248,11 +248,28 @@
         </form>
     </main>
 
+    <button id="voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
     <!-- Rodapé (Atividade 3: Créditos e Documentação) -->
     <footer>
         <p>&copy; 2026 Padaria do Bairro - Desenvolvido com excelência por Carlos Macedo.</p>
     </footer>
 
+    <script>
+        const botaoTopo = document.getElementById('voltar-topo');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 250) {
+                botaoTopo.classList.add('ativo');
+            } else {
+                botaoTopo.classList.remove('ativo');
+            }
+        });
+
+        botaoTopo.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>
