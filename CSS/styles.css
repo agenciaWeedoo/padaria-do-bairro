@@ -68,7 +68,8 @@ h1 {
 nav ul {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Essencial: permite que os links formem uma nova linha se não couberem */
+    flex-wrap: wrap;
+    /* Essencial: permite que os links formem uma nova linha se não couberem */
     gap: 20px;
     list-style: none;
     margin-top: 15px;
@@ -79,13 +80,15 @@ nav a {
     color: #7d1a1a;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5px 10px; /* Cria uma "área de clique" maior, excelente para mobile */
+    padding: 5px 10px;
+    /* Cria uma "área de clique" maior, excelente para mobile */
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: rgba(125, 26, 26, 0.1); /* Efeito de destaque ao passar o mouse */
+    background-color: rgba(125, 26, 26, 0.1);
+    /* Efeito de destaque ao passar o mouse */
     transform: translateY(-2px);
 }
 
@@ -133,6 +136,7 @@ table,
 th,
 td {
     border: 2px solid #000000 !important;
+
 }
 
 th,
@@ -305,7 +309,38 @@ input[type="reset"]:hover {
     background: rgba(93, 64, 55, 0.1);
 }
 
-span { font-size: 10px;
+#voltar-topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #c69c28;
+    color: #6f3b02;
+    font-size: 1.5rem;
+    cursor: default;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 999;
+}
+
+#voltar-topo.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#voltar-topo:hover {
+    background-color: #dac58c;
+}
+
+span {
+    font-size: 10px;
     color: red;
 }
 
