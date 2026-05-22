@@ -14,7 +14,7 @@
 
     <!-- Cabeçalho: Título e Menu de Navegação (Atividade 1 e 2) -->
     <header>
-        <h1>Padoca da Quebrada - A melhor padaria da Vila Esperança!</h1>
+        <h1>Padoca da Quebrada<br><br>A melhor padaria da Vila Esperança!</h1><br>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
@@ -29,6 +29,61 @@
     </header>
 
     <main>
+        <section id="hero" class="hero-grid">
+            <div class="hero-texto">
+                <h2>Pães fresquinhos todos os dias</h2>
+                <p>Venha provar o verdadeiro sabor da fermentação natural, feito com amor e tradição na nossa padaria.</p>
+            </div>
+            <div class="hero-imagem">
+                <img src="Mídia/Imagens/cesto-de-paes-da-padaria-do-bairro.png" alt="Cesto com pães variados" style=" border-radius: 80px; object-fit: cover;">
+            </div>
+        </section>
+
+        <section id="produtos-grid-secao">
+            <h2>Destaques da Vitrine</h2>
+            <div class="grid-galeria">
+                <div class="item-grid"><img src="Mídia/Imagens/croissant-prato-ceramica-padaria-do-bairro.png" alt="Croissant"></div>
+                <div class="item-grid"><img src="Mídia/Imagens/close-cafe-mesa.png" alt="Café na mesa"></div>
+                <div class="item-grid"><img src="Mídia/Imagens/cesto-de-paes-da-padaria-do-bairro.png" alt="Cesto de pães"></div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="container-depoimentos">
+                <div class="card-depoimento">
+                    <p>"O melhor pão francês da região! Sempre crocante."</p>
+                    <span>- Maria Silva</span>
+                </div>
+                <div class="card-depoimento card-destaque">
+                    <p>"Ambiente maravilhoso e croissant perfeito. Recomendo!"</p>
+                    <span>- João Souza</span>
+                </div>
+                <div class="card-depoimento">
+                    <p>"O café expresso é divino para começar o dia."</p>
+                    <span>- Ana Paula</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="conteudo-com-sidebar">
+            <div class="layout-flex">
+                <article class="conteudo-artigo">
+                    <h2>Dicas do Padeiro</h2>
+                    <p>Para manter seu pão de fermentação natural crocante por mais tempo, evite guardá-lo na geladeira. O ideal é mantê-lo em um saco de papel ou de pano em temperatura ambiente.</p>
+                    <br>
+                    <p>Dica de ouro: sempre aqueça levemente no forno ou frigideira antes de consumir para reativar a crocância da casca!</p>
+                </article>
+                <aside class="sidebar-flex">
+                    <h3>Curiosidades</h3>
+                    <ul>
+                        <li>O croissant tem origem austríaca.</li>
+                        <li>A fermentação natural leva dias.</li>
+                        <li>O café arábica é mais doce.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
         <!-- Vídeo Institucional (Atividade 2: Controles e Usabilidade) -->
         <section id="video-destaque">
             <h2>Nosso Espaço</h2> <br>
@@ -250,6 +305,21 @@
 
     <!-- Rodapé (Atividade 3: Créditos e Documentação) -->
     <footer>
+        <div class="footer-colunas">
+            <div class="coluna">
+                <h4>Nossa Localização</h4>
+                <p>Rua das Flores, 123<br>Vila Esperança</p>
+            </div>
+            <div class="coluna">
+                <h4>Fale Conosco</h4>
+                <p>(11) 4002-8922<br>contato@padocadaquebrada.com</p>
+            </div>
+            <div class="coluna">
+                <h4>Redes Sociais</h4>
+                <p>@padocadaquebrada<br>Facebook / Instagram</p>
+            </div>
+        </div>
+
         <p>&copy; 2026 Padaria do Bairro - Desenvolvido com excelência por Carlos Macedo.</p>
     </footer>
 

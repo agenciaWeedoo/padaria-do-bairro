@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Ajuste esse valor para a altura exata do seu cabeçalho */
+    scroll-padding-top: 320px; 
+    
+    /* Bônus: Isso faz a página deslizar suavemente até a seção, em vez de pular de uma vez */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,6 +15,8 @@ body {
     background-color: #91790ea7;
     /* Bege Claro */
     color: #333;
+    /* Ajuste esse valor de acordo com a altura total do seu header */
+    padding-top: 0px;
 }
 
 /* Regra Global para Imagens (Evita que fiquem gigantes) */
@@ -24,10 +31,13 @@ header {
     background: linear-gradient(270deg, #f5ef83, #d9a930, #fffdd0);
     background-size: 600% 600%;
     animation: auroraPadaria 15s ease infinite;
-
+    position: sticky;
+    top: 0;           /* Define que ele deve grudar no topo da janela */
+    z-index: 1000;    /* Garante que o menu fique sempre na frente de fotos/textos */
     padding: 40px 30px;
     text-align: center;
-    border-bottom: 3px solid #5D4037;
+    border-bottom: 3px solid #5D4037;    
+    width: 100%;
 }
 
 @keyframes auroraPadaria {
@@ -47,7 +57,11 @@ header {
 h1 {
     color: #432c25;
     font-size: 2.8rem;
-    letter-spacing: 3px;
+    letter-spacing: 2.8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Atualizei esta parte no arquivo styles.css */
@@ -154,6 +168,7 @@ video {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
+    
 }
 
 /* Controla o tamanho das imagens na galeria e na seção equipe */
@@ -292,4 +307,180 @@ input[type="reset"]:hover {
 
 span { font-size: 10px;
     color: red;
+}
+
+/* =========================================================
+   NOVAS REGRAS: ATIVIDADE DE GRID E FLEXBOX
+   ========================================================= */
+
+/* 1 e 5. Seção Hero (Grid Assimétrico: 2fr para texto e 1fr para imagem) */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px;
+    align-items: center; 
+    background: linear-gradient(135deg, #FFFDD0, #F5F5DC);
+}
+
+.hero-texto h2 {
+    color: #5D4037;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* 2. Estrutura Galeria de Produtos em Grid */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
+    gap: 15px;
+    margin-top: 100px;
+}
+
+.item-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #5D4037;
+    transition: transform 0.3s;
+}
+
+.item-grid img:hover {
+    transform: scale(1.05); /* Efeito suave ao passar o mouse */
+}
+
+/* 3, 6 e 8. Seção de Depoimentos (Flex-wrap, align-items, align-self) */
+.container-depoimentos {
+    display: flex;
+    flex-wrap: wrap; /* 6. Permite quebrar linha em telas pequenas */
+    justify-content: center;
+    align-items: flex-end; /* 8. Alinha todos os cards na base inferior */
+    gap: 20px;
+    margin-top: 20px;
+    min-height: 200px;
+}
+
+.card-depoimento {
+    background-color: #ffffff;
+    border: 2px solid #5D4037;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card-depoimento span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #7d1a1a;
+    font-size: 0.9rem;
+}
+
+/* 8. Usando align-self para alinhar o card de destaque de forma diferente (no topo) */
+.card-destaque {
+    align-self: flex-start; 
+    background-color: #f5ef83;
+    border-color: #d9a930;
+}
+
+/* 7. Sidebar Flexível (ajusta à altura com stretch) */
+.layout-flex {
+    display: flex;
+    align-items: stretch; /* Garante que os dois fiquem com a mesma altura */
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.conteudo-artigo {
+    flex: 3; /* Ocupa 3 partes do espaço */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #E7D7C1;
+}
+
+.sidebar-flex {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    background-color: #5D4037;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.sidebar-flex h3 {
+    color: #f5ef83;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 5px;
+}
+
+.sidebar-flex ul {
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
+/* 4. Rodapé com layout em colunas */
+.footer-colunas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.coluna {
+    text-align: left;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+.coluna h4 {
+    color: #f5ef83;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVIDADE (TELAS MENORES / CELULARES)
+   ========================================================= */
+   @media (max-width: 768px) {
+    
+    /* 1. Ajusta o Cabeçalho para telas pequenas */
+    header {
+        padding: 20px 10px;
+    }
+    h1 {
+        font-size: 1.8rem; /* Diminui o título para caber na tela */
+        letter-spacing: 1px;
+    }
+
+    /* 2. Hero: Quebra as colunas e empilha texto e imagem */
+    .hero-grid {
+        grid-template-columns: 1fr; /* Muda de 2 colunas para 1 coluna só */
+        text-align: center;
+    }
+
+    /* 3. Galeria Grid: Uma imagem por linha no celular */
+    .grid-galeria {
+        grid-template-columns: 1fr; /* Muda de 3 colunas para 1 coluna */
+    }
+
+    /* 4. Sidebar: Coloca a sidebar debaixo do artigo */
+    .layout-flex {
+        flex-direction: column; /* Força o Flexbox a empilhar verticalmente */
+    }
+
+    /* 5. Depoimentos: Deixa os cards ocupando 100% da largura */
+    .card-depoimento {
+        width: 100%;
+    }
+
+    /* 6. Rodapé: Centraliza o conteúdo das colunas no celular */
+    .coluna {
+        text-align: center;
+        width: 100%;
+    }
 }
