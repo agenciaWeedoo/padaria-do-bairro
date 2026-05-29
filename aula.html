@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 id="titulo">Olá, Mundo!</h1>
+        <p class="paragrafo">Primeiro parágrafo.</p>
+        <p class="paragrafo">Segundo parágrafo.</p>
+        <button>Clique aqui</button>
+    </main>
+    <script>
+        /* 1. Selecionar o <h1> pelo seu id e exibir no console*/
+        const titulo = document.getElementById('titulo');
+        console.log(titulo);
+
+        /* 2. Selecionar apenas o primeiro <p> usando querySelector */
+        /* O querySelector sempre retorna apenas o primeiro elemento que encontrar */
+        const primeiroParagrafo = document.querySelector('p'); 
+        console.log(primeiroParagrafo);
+
+        /* 3. Selecionar todos os <p> com a classe "paragrafo" e exibir quantos existem */
+        /* O querySelectorAll retorna uma NodeList (uma espécie de array) com todos os elementos encontrados */
+        const todosParagrafos = document.querySelectorAll('.paragrafo');
+        console.log(`Existem ${todosParagrafos.length} parágrafos com essa classe.`);
+
+        /* 4. Selecionar o <button> pelo nome da tag */
+        /* O getElementsByTagName também retorna uma coleção, então usamos [0] para pegar o primeiro botão */
+        const botao = document.getElementsByTagName('button')[0];
+        console.log(botao);
+    </script>
+</body>
+
+</html>
