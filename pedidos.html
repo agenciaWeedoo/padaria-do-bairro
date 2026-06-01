@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos Especiais | Padaria do Bairro</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos básicos para os novos painéis dinâmicos não quebrarem o layout */
+        .painel-dinamico { margin-top: 20px; padding: 15px; border-radius: 8px; }
+        #carrinho-section { background-color: #e8f5e9; border: 1px solid #4caf50; }
+        #admin-panel { background-color: #fff3e0; border: 2px dashed #ff9800; }
+        .escondido { display: none !important; } /* Classe utilitária para esconder elementos */
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +22,7 @@
     <main>
         <section id="form-section">
             <h2>Faça seu Pedido Especial</h2>
-            <form action="#" method="post">
+            <form action="#" method="post" id="form-pedido">
                 <fieldset>
                     <legend>Seção 1 - Dados do Cliente</legend>
                     <label for="nome_pedido">👤 Nome completo:</label>
@@ -24,8 +31,8 @@
                     <label for="tel_pedido">📞 Telefone:</label>
                     <input type="tel" id="tel_pedido" name="tel_pedido" placeholder="Somente números" pattern="[0-9]{10,11}" required> <br><br>
                     
-                    <label for="email_pedido">📧 Email:</label>
-                    <input type="email" id="email_pedido" name="email_pedido" required>
+                    <label for="endereco_pedido">📧 Endereço para envio:</label>
+                    <input type="endereco" id="endereco_pedido" name="endereco_pedido" required>
                 </fieldset>
 
                 <fieldset>
@@ -46,35 +53,37 @@
                         <label for="cat_cafeteria">Cafeteria</label>
                     </div>
     
-    <label for="sabor">🥐 Escolha o Produto:</label>
-    
-    <select id="sabor" name="sabor" required>
-        <option value="">-- Selecione um item --</option>
-        
-        <optgroup id="group-paes" label="🥖 Pães">
-            <option value="pao-frances">Pão Francês (R$ 0,50/un)</option>
-            <option value="sourdough">Sourdough Clássico (R$ 22,00)</option>
-            <option value="baguete">Baguete Francesa (R$ 12,00)</option>
-        </optgroup>
+                    <label for="sabor">🥐 Escolha o Produto:</label>
+                    <select id="sabor" name="sabor" required>
+                        <option value="">-- Selecione um item --</option>
+                        
+                        <optgroup id="group-paes" label="🥖 Pães">
+                            <option value="pao-frances" data-preco="0.50">Pão Francês (R$ 0,50/un)</option>
+                            <option value="sourdough" data-preco="22.00">Sourdough Clássico (R$ 22,00)</option>
+                            <option value="baguete" data-preco="12.00">Baguete Francesa (R$ 12,00)</option>
+                        </optgroup>
 
-        <optgroup id="group-doces" label="🍰 Doces">
-            <option value="bolo-chocolate">Bolo de Chocolate (R$ 45,00)</option>
-            <option value="torta-morango">Torta de Morango (R$ 15,00/fatia)</option>
-            <option value="sonho">Sonho de Creme (R$ 8,50)</option>
-        </optgroup>
+                        <optgroup id="group-doces" label="🍰 Doces">
+                            <option value="bolo-chocolate" data-preco="45.00">Bolo de Chocolate (R$ 45,00)</option>
+                            <option value="torta-morango" data-preco="15.00">Torta de Morango (R$ 15,00/fatia)</option>
+                            <option value="sonho" data-preco="8.50">Sonho de Creme (R$ 8,50)</option>
+                        </optgroup>
 
-        <optgroup id="group-salgados" label="🥨 Salgados">
-            <option value="coxinha">Coxinha de Frango (R$ 9,00)</option>
-            <option value="croissant">Croissant Presunto/Queijo (R$ 16,00)</option>
-            <option value="esfirra">Esfirra de Carne (R$ 7,50)</option>
-        </optgroup>
+                        <optgroup id="group-salgados" label="🥨 Salgados">
+                            <option value="coxinha" data-preco="9.00">Coxinha de Frango (R$ 9,00)</option>
+                            <option value="croissant" data-preco="16.00">Croissant Presunto/Queijo (R$ 16,00)</option>
+                            <option value="esfirra" data-preco="7.50">Esfirra de Carne (R$ 7,50)</option>
+                        </optgroup>
 
-        <optgroup id="group-cafeteria" label="☕ Cafeteria">
-            <option value="espresso">Espresso Duplo (R$ 8,00)</option>
-        </optgroup>
-    </select>
+                        <optgroup id="group-cafeteria" label="☕ Cafeteria">
+                            <option value="espresso" data-preco="8.00">Espresso Duplo (R$ 8,00)</option>
+                        </optgroup>
+                    </select><br><br>
 
-    <br><br>
+                    <label for="quantidade_item">📦 Quantidade:</label>
+                    <input type="number" id="quantidade_item" min="1" value="1" style="width: 60px;">
+                    <button type="button" id="btn-adicionar">Adicionar ao Carrinho 🛒</button>
+                    <br><br>
                 
                     <label>📏 Tamanho/Porção:</label>
                     <div style="margin-bottom: 15px;">
@@ -92,6 +101,49 @@
                     <input type="date" id="data_entrega" name="data_entrega" required>
                 </fieldset>
 
+                <div id="carrinho-section" class="painel-dinamico">
+                    <h3>🛒 Seu Carrinho</h3>
+                    <ul id="lista-carrinho">
+                        <li><em>Carrinho vazio</em></li>
+                    </ul>
+                    <hr>
+                    <p><strong>Subtotal:</strong> <span id="display-subtotal">R$ 0,00</span></p>
+                    <p><strong>Descontos:</strong> <span id="display-desconto">R$ 0,00</span></p>
+                    <p><strong>Total Final:</strong> <span id="display-total">R$ 0,00</span></p>
+                    <p><strong>Pontos de Fidelidade Ganhos:</strong> <span id="display-pontos">0</span> ⭐</p>
+                    
+                    <label for="forma_pagamento">💳 Escolha a Forma de Pagamento:</label>
+                    <select id="forma_pagamento" name="forma_pagamento" required>
+                        <option value="">-- Selecione o Pagamento --</option>
+                        <option value="dinheiro">💵 Dinheiro físico</option>
+                        <option value="credito">💳 Cartão de Crédito</option>
+                        <option value="debito">💳 Cartão de Débito</option>
+                        <option value="btc">₿ Bitcoin (BTC)</option>
+                        <option value="eth">♦ Ethereum (ETH)</option>
+                        <option value="digital_pay">📱 Apple Pay / Google Pay</option>
+                    </select>
+                    <br><br>
+
+                    <div id="secao-dinheiro" class="escondido">
+                        <label for="valor_pago">💵 Quanto vai pagar em Dinheiro? (Para o Troco):</label>
+                        <input type="number" id="valor_pago" min="0" step="0.50" placeholder="Ex: 50.00">
+                        <p><strong>Troco a receber:</strong> <span id="display-troco">R$ 0,00</span></p>
+                    </div>
+
+                    <div id="secao-cripto" class="escondido">
+                        <p><strong>Total em Cripto de acordo com a cotação:</strong></p>
+                        <p id="display-cripto-focado">BTC: 0.000000 | ETH: 0.000000</p>
+                    </div>
+                </div>
+
+                <div id="admin-panel" class="painel-dinamico">
+                    <h3>📊 Painel Administrativo</h3>
+                    <p><strong>Produto Mais Vendido:</strong> <span id="admin-ranking">Nenhum</span></p>
+                    <p><strong>Faturamento do Dia:</strong> <span id="admin-faturamento">R$ 0,00</span></p>
+                    <p><strong>Clientes no Banco:</strong> <span id="admin-clientes">0</span></p>
+                    <button type="button" onclick="sistemaNotificacoes('Alerta de Estoque configurado!')">Testar Alerta</button>
+                </div><br>
+
                 <fieldset>
                     <legend>Seção 3 - Informações Adicionais</legend>
                     <label for="obs">📝 Observações especiais:</label>
@@ -102,38 +154,314 @@
                 </fieldset>
 
                 <div class="botoes-form">
-                    <input type="submit" value="Fazer Pedido">
+                    <input type="submit" value="Finalizar Pedido">
                     <input type="reset" value="Limpar">
                 </div>
             </form>
         </section>
     </main>
     <footer><p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p></footer>
-</body>
+
 <script>
+    // ==========================================
+    // 1. CÓDIGO ANTERIOR INTACTO
+    // ==========================================
+    const nomeEstabelecimento = "Padaria do Bairro"; 
+    let pedidosEmAndamento = 0; 
+    var sistemaLegado = true; 
+
+    const precoPaoFrances = 0.50;
+    const precoSourdough = 22.00;
+    const precoBoloChocolate = 45.00;
+
+    let estoquePaoFrances = 150;
+    let estoqueSourdough = 12;
+    let estoqueBoloChocolate = 3;
+
+    const categorias = ["Pães", "Doces", "Salgados", "Cafeteria"];
+    const produtosArray = ["Pão Francês", "Sourdough Clássico", "Bolo de Chocolate", "Coxinha de Frango"];
+
+    const produtoPaoFrances = { id: "pao-frances", nome: "Pão Francês", categoria: "Pães", preco: precoPaoFrances, estoqueAtual: estoquePaoFrances };
+    const produtoBoloChocolate = { id: "bolo-chocolate", nome: "Bolo de Chocolate", categoria: "Doces", preco: precoBoloChocolate, estoqueAtual: estoqueBoloChocolate };
+
     const radioButtons = document.querySelectorAll('input[name="tipo_produto"]');
     const selectSabor = document.getElementById('sabor');
     const grupos = selectSabor.querySelectorAll('optgroup');
 
     radioButtons.forEach(radio => {
         radio.addEventListener('change', () => {
-            const categoriaSelecionada = radio.value; // Ex: 'paes', 'doces'
-
+            const categoriaSelecionada = radio.value; 
             grupos.forEach(grupo => {
-                // Se o ID do grupo contiver o valor do rádio, ele fica ativo
                 if (grupo.id === `group-${categoriaSelecionada}`) {
                     grupo.disabled = false;
                     grupo.style.display = "block";
                 } else {
-                    // Senão, ele fica esmaecido e bloqueado
                     grupo.disabled = true;
-                    grupo.style.display = "none"; // Ou mantenha apenas o disabled para 'esmaecer'
+                    grupo.style.display = "none"; 
                 }
             });
-            
-            // Reseta o select para a opção inicial ao mudar de categoria
             selectSabor.value = "";
         });
     });
+
+    // ==========================================
+    // 2. LOGICA MODIFICADA PARA ATENDER A NOVA REGRA
+    // ==========================================
+
+    const padaria = { nome: "Padaria do Bairro", endereco: "Rua do Trigo, 123", telefone: "11999998888" };
+    const configuracoes = { taxaConversaoBTC: 0.0000032, taxaConversaoETH: 0.000055, pontosPorReal: 0.2, descontoPrimeiraCompra: 0.10 };
+
+    let carrinho = []; 
+    const clientesFrequentes = []; 
+    const historicoDia = [];       
+    const favoritos = ["pao-frances", "sonho"]; 
+
+    const produtosDisponiveis = [
+        produtoPaoFrances,
+        { codigo: "PAO002", id: "sourdough", nome: "Sourdough Clássico", preco: 22.00, estoque: 12 },
+        { codigo: "DOC001", id: "sonho", nome: "Sonho de Creme", preco: 8.50, estoque: 30 },
+        { codigo: "CAF001", id: "espresso", nome: "Espresso Duplo", preco: 8.00, estoque: 100 },
+        produtoBoloChocolate
+    ];
+
+    const formatarNome = (nome) => {
+        if (!nome) return ""; 
+        return nome.split(' ').map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()).join(' ');
+    };
+
+    const formatarMoeda = (valor) => `R$ ${Number(valor).toFixed(2).replace('.', ',')}`;
+    const formatarDataHora = () => new Date().toLocaleString('pt-BR');
+    const sistemaNotificacoes = (mensagem) => alert(mensagem);
+
+    document.getElementById('nome_pedido').addEventListener('blur', (e) => {
+        const nomeFormatado = formatarNome(e.target.value);
+        if(nomeFormatado.trim() !== "") e.target.value = nomeFormatado;
+    });
+
+    // --- 🛠️ MUDANÇA INTERNA: MANIPULAÇÃO DINÂMICA DO PAGAMENTO ---
+    const selectPagamento = document.getElementById('forma_pagamento');
+    const secaoDinheiro = document.getElementById('secao-dinheiro');
+    const secaoCripto = document.getElementById('secao-cripto');
+
+    // Monitora a escolha do pagamento para exibir ou ocultar os blocos corretos
+    selectPagamento.addEventListener('change', () => {
+        const opcao = selectPagamento.value;
+
+        // Esconde tudo por padrão usando nossa classe CSS '.escondido'
+        secaoDinheiro.classList.add('escondido');
+        secaoCripto.classList.add('escondido');
+
+        // Mostra apenas o bloco do pagamento correspondente
+        if (opcao === 'dinheiro') {
+            secaoDinheiro.classList.remove('escondido');
+        } else if (opcao === 'btc' || opcao === 'eth') {
+            secaoCripto.classList.remove('escondido');
+        }
+        
+        calcularTotais(); // Recalcula para atualizar trocos/cotações com base na escolha
+    });
+
+    const atualizarInterfaceCarrinho = (subtotal, total, descontoGeral) => {
+        const listaUI = document.getElementById('lista-carrinho');
+        listaUI.innerHTML = ""; 
+
+        if (carrinho.length === 0) {
+            listaUI.innerHTML = "<li><em>Carrinho vazio</em></li>";
+        } else {
+            carrinho.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.quantidade}x ${item.nome} - ${formatarMoeda(item.preco * item.quantidade)} `;
+                
+                const btnRemover = document.createElement('button');
+                btnRemover.textContent = "❌";
+                btnRemover.style.marginLeft = "10px";
+                btnRemover.style.cursor = "pointer";
+                btnRemover.onclick = () => removerDoCarrinho(index);
+                
+                li.appendChild(btnRemover);
+                listaUI.appendChild(li);
+            });
+        }
+
+        document.getElementById('display-subtotal').textContent = formatarMoeda(subtotal);
+        document.getElementById('display-desconto').textContent = formatarMoeda(descontoGeral);
+        document.getElementById('display-total').textContent = formatarMoeda(total);
+        
+        document.getElementById('display-pontos').textContent = Math.floor(total * configuracoes.pontosPorReal);
+
+        // Atualiza a conversão de cripto focada da interface
+        const valorBTC = (total * configuracoes.taxaConversaoBTC).toFixed(6);
+        const valorETH = (total * configuracoes.taxaConversaoETH).toFixed(6);
+        document.getElementById('display-cripto-focado').textContent = `BTC: ₿ ${valorBTC} | ETH: ♦ ${valorETH}`;
+    };
+
+    const calcularTotais = () => {
+        let subtotal = 0;
+        let descontoGeral = 0;
+
+        carrinho.forEach(item => {
+            const pacotesDeTres = Math.floor(item.quantidade / 3);
+            const itensForaDoPacote = item.quantidade % 3;
+            const valorComDescontoQtd = (pacotesDeTres * 2 * item.preco) + (itensForaDoPacote * item.preco);
+            const valorSemDesconto = item.quantidade * item.preco;
+            
+            subtotal += valorSemDesconto;
+            descontoGeral += (valorSemDesconto - valorComDescontoQtd);
+        });
+
+        let total = subtotal - descontoGeral;
+
+        const telefoneAtual = document.getElementById('tel_pedido').value;
+        const jaEhCliente = clientesFrequentes.some(c => c.telefone === telefoneAtual);
+        
+        if (!jaEhCliente && total > 0 && telefoneAtual.length >= 10) {
+            const descontoPrimeira = total * configuracoes.descontoPrimeiraCompra;
+            descontoGeral += descontoPrimeira;
+            total -= descontoPrimeira;
+        }
+
+        atualizarInterfaceCarrinho(subtotal, total, descontoGeral);
+        calcularTroco(total);
+        return total;
+    };
+
+    const calcularTroco = (totalFinal) => {
+        const inputValorPago = document.getElementById('valor_pago').value;
+        const valorPago = parseFloat(inputValorPago);
+        const displayTroco = document.getElementById('display-troco');
+
+        // Só calcula troco se a opção selecionada for 'dinheiro'
+        if (selectPagamento.value === 'dinheiro' && !isNaN(valorPago) && valorPago >= totalFinal && totalFinal > 0) {
+            const troco = valorPago - totalFinal;
+            displayTroco.textContent = formatarMoeda(troco);
+            displayTroco.style.color = "green";
+        } else {
+            displayTroco.textContent = "R$ 0,00";
+            displayTroco.style.color = "black";
+        }
+    };
+
+    document.getElementById('valor_pago').addEventListener('input', () => calcularTotais());
+    document.getElementById('tel_pedido').addEventListener('input', () => calcularTotais());
+
+    const adicionarAoCarrinho = () => {
+        const selectSabor = document.getElementById('sabor');
+        const quantidade = parseInt(document.getElementById('quantidade_item').value);
+        
+        if (selectSabor.value === "" || isNaN(quantidade) || quantidade <= 0) {
+            sistemaNotificacoes("Selecione um produto e uma quantidade válida.");
+            return;
+        }
+
+        const optionSelecionada = selectSabor.options[selectSabor.selectedIndex];
+        const idProduto = optionSelecionada.value;
+        const nomeProduto = optionSelecionada.text.split(' (')[0]; 
+        const precoProduto = parseFloat(optionSelecionada.getAttribute('data-preco'));
+
+        const itemExistente = carrinho.find(item => item.id === idProduto);
+        if (itemExistente) {
+            itemExistente.quantidade += quantidade;
+        } else {
+            carrinho.push({ id: idProduto, nome: nomeProduto, preco: precoProduto, quantidade: quantidade });
+        }
+
+        calcularTotais();
+    };
+
+    const removerDoCarrinho = (index) => {
+        carrinho.splice(index, 1);
+        calcularTotais();
+    };
+
+    document.getElementById('btn-adicionar').addEventListener('click', adicionarAoCarrinho);
+
+    // --- 📊 ATUALIZAÇÃO DO PAINEL ADMIN (SÓ EXECUTA NO SUBMIT) ---
+    const atualizarPainelAdmin = () => {
+        const ranking = {};
+        let faturamentoTotal = 0;
+
+        historicoDia.forEach(pedido => {
+            faturamentoTotal += pedido.total;
+            pedido.itens.forEach(item => {
+                if (!ranking[item.nome]) ranking[item.nome] = 0;
+                ranking[item.nome] += item.quantidade;
+            });
+        });
+
+        document.getElementById('admin-faturamento').textContent = formatarMoeda(faturamentoTotal);
+        document.getElementById('admin-clientes').textContent = clientesFrequentes.length;
+
+        let maisVendido = "Nenhum";
+        let maxVendas = 0;
+        for (const [nome, qtd] of Object.entries(ranking)) {
+            if (qtd > maxVendas) {
+                maxVendas = qtd;
+                maisVendido = `${nome} (${qtd} un)`;
+            }
+        }
+        document.getElementById('admin-ranking').textContent = maisVendido;
+    };
+
+    // --- FINALIZAÇÃO DO PEDIDO ---
+    document.getElementById('form-pedido').addEventListener('submit', (e) => {
+        e.preventDefault(); 
+
+        if (carrinho.length === 0) {
+            sistemaNotificacoes("Seu carrinho está vazio!");
+            return;
+        }
+
+        const formaPgtoSelecionada = selectPagamento.value;
+        const totalPedido = calcularTotais();
+
+        // Validação extra caso escolha dinheiro mas não pague o suficiente
+        if (formaPgtoSelecionada === 'dinheiro') {
+            const valorPago = parseFloat(document.getElementById('valor_pago').value);
+            if (isNaN(valorPago) || valorPago < totalPedido) {
+                sistemaNotificacoes("O valor em dinheiro fornecido é insuficiente para cobrir o total!");
+                return;
+            }
+        }
+
+        const nome = formatarNome(document.getElementById('nome_pedido').value);
+        const telefone = document.getElementById('tel_pedido').value;
+        const pontosGanhos = Math.floor(totalPedido * configuracoes.pontosPorReal);
+
+        let cliente = clientesFrequentes.find(c => c.telefone === telefone);
+        if (!cliente) {
+            cliente = { nome: nome, telefone: telefone, pontos: 0 };
+            clientesFrequentes.push(cliente);
+        }
+        cliente.pontos += pontosGanhos;
+
+        const novoPedido = {
+            id: `PED-${Date.now()}`,
+            dataHora: formatarDataHora(),
+            cliente: cliente,
+            itens: [...carrinho], 
+            total: totalPedido,
+            formaPagamento: formaPgtoSelecionada, // Salva a escolha ativa no histórico do pedido
+            status: "Recebido"
+        };
+
+        historicoDia.push(novoPedido);
+        
+        sistemaNotificacoes(`Pedido finalizado com sucesso! Pago via: ${formaPgtoSelecionada.toUpperCase()}.`);
+
+        // Reseta o estado para o próximo cliente
+        carrinho = [];
+        document.getElementById('form-pedido').reset();
+        
+        // Esconde as áreas de pagamento dinâmicas novamente após o reset
+        secaoDinheiro.classList.add('escondido');
+        secaoCripto.classList.add('escondido');
+        
+        calcularTotais();
+        
+        // 🚀 O Painel Administrativo agora consolida os valores apenas aqui!
+        atualizarPainelAdmin();
+    });
+
 </script>
+</body>
 </html>
