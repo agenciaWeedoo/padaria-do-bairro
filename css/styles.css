@@ -92,10 +92,6 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-#hero {
-    margin: 20px;
-}
-
 /* 3. BLOCOS COLORIDOS (Gradientes) */
 section {
     padding: 40px 20px;
