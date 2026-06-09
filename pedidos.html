@@ -167,6 +167,77 @@
                 </div>
             </form>
         </section>
+        <!-- ========================================== -->
+        <!-- INÍCIO DAS ATIVIDADES DO CURSO (V2.0)      -->
+        <!-- ========================================== -->
+        
+        <section id="loja-virtual" class="painel-dinamico">
+            <h2>🛍️ Vitrine Interativa (Eventos de Mouse, Teclado e Clique)</h2>
+            
+            <label for="busca-vitrine">🔎 Buscar na Vitrine:</label>
+            <input type="text" id="busca-vitrine" placeholder="Comece a digitar para filtrar... (Ex: Pão, Bolo)">
+            <br><br>
+
+            <div id="galeria-vitrine">
+                <!-- Produto 1 -->
+                <div class="card-produto" tabindex="0">
+                    <div class="imagem-produto">🥖</div>
+                    <h4 class="nome-vitrine">Pão Francês Quentinho</h4>
+                    <p class="detalhes-produto escondido">Fermentação natural, crocante por fora e macio por dentro.</p>
+                    <button type="button" class="btn-detalhes">Ver Detalhes 🔍</button>
+                    <div class="controles-qtd">
+                        <button type="button" class="btn-menos">➖</button>
+                        <span class="qtd-display">1</span>
+                        <button type="button" class="btn-mais">➕</button>
+                    </div>
+                    <button type="button" class="btn-add-vitrine">Adicionar ao Carrinho 🛒</button>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="card-produto" tabindex="0">
+                    <div class="imagem-produto">🍰</div>
+                    <h4 class="nome-vitrine">Bolo de Chocolate</h4>
+                    <p class="detalhes-produto escondido">Recheio cremoso de cacau 70% com cobertura de ganache.</p>
+                    <button type="button" class="btn-detalhes">Ver Detalhes 🔍</button>
+                    <div class="controles-qtd">
+                        <button type="button" class="btn-menos">➖</button>
+                        <span class="qtd-display">1</span>
+                        <button type="button" class="btn-mais">➕</button>
+                    </div>
+                    <button type="button" class="btn-add-vitrine">Adicionar ao Carrinho 🛒</button>
+                </div>
+            </div>
+            
+            <br>
+            <button type="button" id="btn-limpar-carrinho" class="btn-perigo">🗑️ Limpar Carrinho (Teste)</button>
+        </section>
+
+        <section id="cadastro-cliente" class="painel-dinamico">
+            <h2>👤 Cadastro Rápido (Eventos de Formulário)</h2>
+            <form id="form-checkout">
+                <label for="email_cliente">📧 E-mail:</label>
+                <input type="email" id="email_cliente" placeholder="seu@email.com">
+                <span id="erro-email" class="msg-erro escondido">Formato de e-mail inválido!</span><br><br>
+
+                <label for="senha_cliente">🔒 Senha (Crie uma):</label>
+                <input type="password" id="senha_cliente" placeholder="Digite sua senha">
+                <span id="forca-senha">Força: <strong id="nivel-senha">Nenhuma</strong></span><br><br>
+
+                <label for="feedback_cliente">📝 Mensagem para o Padeiro:</label>
+                <textarea id="feedback_cliente" rows="3" maxlength="100" placeholder="Ex: Deixe o pão bem moreninho!"></textarea>
+                <p><small><span id="contador-chars">0</span>/100 caracteres</small></p>
+
+                <button type="submit" id="btn-finalizar-checkout">Finalizar Cadastro Seguro 📤</button>
+                <p><small><em>Dica: Aperte Ctrl+Enter no teclado para enviar!</em></small></p>
+            </form>
+        </section>
+        
+        <!-- Script externo conforme exigência do curso -->
+        <script src="js/script.js"></script>
+        
+        <!-- ========================================== -->
+        <!-- FIM DAS ATIVIDADES DO CURSO                -->
+        <!-- ========================================== -->
     </main>
     <footer>
         <p>&copy; 2026 Padaria do Bairro - Agência Weedoo.</p>
