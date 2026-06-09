@@ -519,3 +519,88 @@ span {
         width: 100%;
     }
 }
+
+/* ========================================== */
+/* ESTILOS DA VITRINE E EVENTOS DE MOUSE      */
+/* ========================================== */
+
+#loja-virtual {
+    background-color: #f3e5f5;
+    border: 2px solid #9c27b0;
+}
+
+#cadastro-cliente {
+    background-color: #e3f2fd;
+    border: 2px solid #2196f3;
+}
+
+#galeria-vitrine {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Eventos Visuais de Mouse: Hover e Transições */
+.card-produto {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    outline: none; /* Remove borda feia ao focar com teclado */
+}
+
+/* 🖼️ Atividade 2: Efeito de destaque no mouseover */
+.card-produto:hover, .card-produto:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-color: #9c27b0;
+}
+
+.imagem-produto {
+    font-size: 50px;
+    transition: transform 0.3s;
+}
+
+.card-produto:hover .imagem-produto {
+    transform: scale(1.2);
+}
+
+.controles-qtd {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 🎨 Atividade 2: Botões que mudam de cor com hover */
+button {
+    cursor: pointer;
+    transition: background-color 0.3s, filter 0.3s;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+.btn-perigo {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.msg-erro {
+    color: #d32f2f;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.senha-fraca { color: red; }
+.senha-media { color: orange; }
+.senha-forte { color: green; }
